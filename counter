@@ -1,0 +1,77 @@
+//not related to this project :( sorry
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MaterialApp(home: MyApp(),));
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    // return SafeArea(
+    //   child: Column(
+    //     children: [
+    //       MaterialButton(
+    //         // highlightColor: Colors.black,
+    //         // animationDuration: Duration(seconds: 20),
+    //
+    //         onPressed: (){
+    //           setState(() {
+    //             count += 1;
+    //           });
+    //         },
+    //         onLongPress: (){
+    //           setState(() {
+    //             count = 0;
+    //           });
+    //         },
+    //         minWidth: double.infinity,
+    //         // height: double.infinity,
+    //         height: 800,
+    //         child: Text(
+    //           count.toString(),
+    //           style: const TextStyle(
+    //             color: Colors.white,
+    //             fontSize: 200
+    //           ),
+    //         ),
+    //       )
+    //     ],
+    //   ),
+    // );
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          count += 1;
+        });
+      },
+      onLongPress: () {
+        setState(() {
+          count = 0;
+        });
+      },
+      child: Container(
+        color: Colors.black, // Set your preferred background color here
+        alignment: Alignment.center,
+        child: Text(
+          count.toString(),
+          style: const TextStyle(
+            color: Colors.deepPurpleAccent,
+            fontSize: 200,
+            decoration: TextDecoration.none,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
